@@ -2,7 +2,7 @@ var model = {
     answer: "",
     answerToggle: false,
     needsReset: false,
-    petitionText: "Peter please answer the following question"
+    petitionText: "Simsalabim Peter tolong jawab Saya"
 }
 
 var controller = {
@@ -33,22 +33,21 @@ var controller = {
     },
     getAnswer: () => {
         const invalidResponse = [
-            "That's not how you petition to Peter.",
-            "Invalid petition. Please try again.",
-            "You're not asking correctly",
-            "Why should I answer to that?",
-            "Please try again tomorrow. Or never...",
-            "I'm tired... Try again another time.",
-            "Not now, I'm busy. Maybe later.",
-            "Fix your petition please.",
+            "Yo Ndak Tahu Kok Tanya Saya",
+            "Mantranya kurang ajib ah, coba lagi",
+            "Kowe tanya apa sih, ndak ngerti aku",
+            "Aku mau turu cok, nanti aja",
+            "ZZzzzzzz......",
+            "Coba tanya sama rumput yang bergoyang",
+            "Wis mangan lur? sarapan dulu sana",
         ];
-        const invalidQuestion = "Please ask Peter a valid question.";
+        const invalidQuestion = "Aku ndak ngerti karo pertanyaane";
         model.needsReset = true;
 
         if (!view.getQuestion()) {                  // Valid Question check
             return invalidQuestion;
         } else if(model.answer) {                   // Valid Petition check
-            return "Peter says " + model.answer;
+            return "Jawabannya Peter: " + model.answer;
         } else {                                    // Invalid Response
             let randomNum = Math.floor(Math.random() * invalidResponse.length);
             return invalidResponse[randomNum];
